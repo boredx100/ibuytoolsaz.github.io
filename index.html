@@ -4,31 +4,122 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iBuyToolsAZ | Industrial Tool Liquidators</title>
+    
+    <!-- SEO / Social -->
+    <meta name="description" content="iBuyToolsAZ: Online & local retail of new/used industrial tools. Shop buyouts, estate liquidations, pro-grade gear. Chandler, AZ.">
+    <meta property="og:title" content="iBuyToolsAZ | Industrial Tool Liquidators">
+    <meta property="og:description" content="Specializing in shop buyouts, estate liquidations, and professional-grade tool procurement.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    
     <style>
-        body { background-color: #1a1a1a; color: #e0e0e0; font-family: 'Courier New', Courier, monospace; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; text-align: center; }
-        .container { border: 2px solid #f39c12; padding: 40px; max-width: 600px; margin: 20px; }
+        /* CSS Variables for easy theming / future scale */
+        :root {
+            --bg: #1a1a1a;
+            --text: #e0e0e0;
+            --accent: #f39c12;
+            --muted: #999; /* bumped contrast from #888 */
+            --panel: #333;
+            --border: #333;
+        }
         
-        /* Logo Styling */
-        .logo { display: block; margin: 0 auto 20px auto; max-width: 75%; height: auto; }
+        body { 
+            background-color: var(--bg); 
+            color: var(--text); 
+            /* System monospace stack: terminal vibe + better cross-platform rendering */
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Courier New', Courier, monospace;
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            min-height: 100vh; 
+            margin: 0; 
+            text-align: center; 
+            line-height: 1.5;
+        }
         
-        h1 { color: #f39c12; letter-spacing: 2px; border-bottom: 1px solid #333; padding-bottom: 10px; margin-top: 0; }
-        p { line-height: 1.6; font-size: 1.1em; }
-        .contact { background: #333; padding: 15px; margin-top: 20px; color: #f39c12; font-weight: bold; border-radius: 4px; }
-        .tagline { color: #888; font-style: italic; }
+        .container { 
+            border: 2px solid var(--accent); 
+            padding: 40px; 
+            max-width: 600px; 
+            margin: 20px; 
+            border-radius: 4px;
+        }
+        
+        .logo { 
+            display: block; 
+            margin: 0 auto 20px auto; 
+            max-width: 75%; 
+            height: auto; 
+        }
+        
+        h1 { 
+            color: var(--accent); 
+            letter-spacing: 2px; 
+            border-bottom: 1px solid var(--border); 
+            padding-bottom: 10px; 
+            margin-top: 0; 
+        }
+        
+        p { 
+            font-size: 1.1em; 
+            margin: 0.75em 0; 
+        }
+        
+        .tagline { 
+            color: var(--muted); 
+            font-style: italic; 
+        }
+        
+        .contact { 
+            background: var(--panel); 
+            padding: 15px; 
+            margin-top: 20px; 
+            color: var(--accent); 
+            font-weight: bold; 
+            border-radius: 4px; 
+        }
+        
+        .cta { 
+            margin-top: 25px; 
+            font-size: 0.95em; 
+        }
+        
+        .cta a { 
+            color: var(--accent); 
+            text-decoration: none; 
+            border-bottom: 1px dashed var(--accent); 
+        }
+        
+        .cta a:hover { 
+            opacity: 0.85; 
+        }
+        
+        .footer { 
+            font-size: 0.8em; 
+            margin-top: 30px; 
+            color: #555; 
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="1777767613715.png"  class="logo">
+        <!-- Added alt text for a11y + SEO; update path to final asset -->
+        <img src="1777767613715.png" alt="iBuyToolsAZ logo" class="logo">
         
-       <!--<h1>iBUYTOOLSAZ.COM</h1>-->
         <p class="tagline">Online and local retail of new and used tools.</p>
         <p>Specializing in shop buyouts, estate liquidations, and professional-grade gear procurement.</p>
+        
         <div class="contact">
             SITE UNDER CONSTRUCTION<br>
             COMING MAY 2026
         </div>
-        <p style="font-size: 0.8em; margin-top: 30px; color: #555;">Chandler, Arizona | Certified Reseller</p>
+        
+        <!-- Pre-launch CTA: low-friction lead capture -->
+        <div class="cta">
+            Need to liquidate tools now? <a href="mailto:hello@ibuytoolsaz.com">hello@ibuytoolsaz.com</a>
+        </div>
+        
+        <p class="footer">Chandler, Arizona | Certified Reseller</p>
     </div>
 </body>
 </html>
