@@ -1,4 +1,381 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>iBuyToolsAZ | ToolBus, Industrial Tools & Liquidation</title>
+
+    <meta name="description" content="iBuyToolsAZ is a Chandler, Arizona based industrial tool supply and liquidation operation building a mobile ToolBus route for technicians, shops, HVAC crews, mechanics, fabricators, and field service pros.">
+
+    <meta property="og:title" content="iBuyToolsAZ | ToolBus, Industrial Tool Supply & Liquidation">
+    <meta property="og:description" content="Industrial tools. Shop buyouts. Mobile ToolBus route alerts. Professional-grade gear for Arizona technicians, mechanics, fabricators, HVAC crews, and field service pros.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "iBuyToolsAZ LLC",
+        "url": "https://ibuytoolsaz.com",
+        "email": "hello@ibuytoolsaz.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Chandler",
+            "addressRegion": "AZ",
+            "addressCountry": "US"
+        },
+        "description": "Industrial tool supply, used tool resale, shop liquidation, equipment buyouts, and planned mobile ToolBus routes serving Arizona technicians and trades."
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg: #141414;
+            --panel: #1f1f1f;
+            --panel2: #252525;
+            --border: #383838;
+            --text: #e7e7e7;
+            --muted: #9c9c9c;
+            --accent: #f39c12;
+            --accent-dark: #c97d0a;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at top right, rgba(243,156,18,0.08), transparent 30%),
+                linear-gradient(to bottom, #111, #161616);
+            color: var(--text);
+            font-family:
+                ui-monospace,
+                SFMono-Regular,
+                Menlo,
+                Monaco,
+                Consolas,
+                "Courier New",
+                monospace;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            background: rgba(25,25,25,0.95);
+            border: 1px solid var(--border);
+            border-top: 4px solid var(--accent);
+            border-radius: 8px;
+            padding: 50px 40px;
+            box-shadow:
+                0 0 30px rgba(0,0,0,0.45),
+                0 0 10px rgba(243,156,18,0.08);
+            text-align: center;
+        }
+
+        .logo {
+            display: block;
+            width: 75%;
+            max-width: 560px;
+            margin: 0 auto 25px auto;
+            height: auto;
+        }
+
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 2rem;
+            letter-spacing: 1px;
+            color: var(--accent);
+        }
+
+        .tagline {
+            color: var(--muted);
+            font-size: 1rem;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .hero-copy {
+            font-size: 1.08rem;
+            line-height: 1.7;
+            color: #d7d7d7;
+            max-width: 760px;
+            margin: 0 auto 30px auto;
+        }
+
+        .toolbus-panel {
+            margin: 35px 0;
+            padding: 28px;
+            background:
+                linear-gradient(135deg, rgba(243,156,18,0.14), rgba(31,31,31,0.95));
+            border: 1px solid rgba(243,156,18,0.35);
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .toolbus-panel h2,
+        .route-signup h2,
+        .status-panel h2 {
+            margin-top: 0;
+            color: var(--accent);
+            letter-spacing: 1px;
+            font-size: 1.2rem;
+        }
+
+        .toolbus-panel p,
+        .route-signup p,
+        .status-panel p {
+            color: #d7d7d7;
+            line-height: 1.6;
+            margin-bottom: 0.85rem;
+        }
+
+        .route-line {
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .cta-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 25px 0 10px 0;
+        }
+
+        .button-link,
+        button {
+            display: inline-block;
+            width: 100%;
+            padding: 13px 16px;
+            border: 1px solid var(--accent);
+            border-radius: 5px;
+            background: rgba(243,156,18,0.08);
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: bold;
+            font-family: inherit;
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+
+        .button-link:hover,
+        button:hover {
+            background: rgba(243,156,18,0.18);
+            color: #ffb84d;
+        }
+
+        .route-signup {
+            margin: 30px 0;
+            background: var(--panel2);
+            border: 1px solid #303030;
+            border-radius: 8px;
+            padding: 24px;
+            text-align: left;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        input[type="email"] {
+            width: 100%;
+            padding: 13px 14px;
+            background: #151515;
+            color: var(--text);
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+
+        input[type="email"]::placeholder {
+            color: #777;
+        }
+
+        form button {
+            width: auto;
+            white-space: nowrap;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: var(--panel);
+            border: 1px solid #2c2c2c;
+            padding: 18px;
+            border-radius: 6px;
+            text-align: left;
+        }
+
+        .card h2 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: var(--accent);
+            font-size: 1rem;
+        }
+
+        .card p {
+            margin: 0;
+            color: #cfcfcf;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .status-panel {
+            margin-top: 32px;
+            background: #181818;
+            border: 1px dashed rgba(243,156,18,0.35);
+            padding: 22px;
+            border-radius: 6px;
+            text-align: left;
+        }
+
+        .status-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .status-item {
+            color: #cfcfcf;
+            font-size: 0.92rem;
+            padding: 10px;
+            background: #202020;
+            border-radius: 4px;
+            border: 1px solid #2d2d2d;
+        }
+
+        .construction {
+            margin-top: 35px;
+            background: linear-gradient(
+                90deg,
+                rgba(243,156,18,0.15),
+                rgba(243,156,18,0.05)
+            );
+            border: 1px solid rgba(243,156,18,0.3);
+            padding: 18px;
+            border-radius: 6px;
+            color: var(--accent);
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .credibility {
+            margin-top: 28px;
+            color: var(--muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 0.82rem;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .signal {
+            color: var(--muted);
+            margin-top: 15px;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                padding: 35px 25px;
+            }
+
+            h1 {
+                font-size: 1.55rem;
+            }
+
+            .logo {
+                width: 90%;
+            }
+
+            form {
+                grid-template-columns: 1fr;
+            }
+
+            form button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <img src="./ibuytoolsaz-logo-v2.png" alt="iBuyToolsAZ logo" class="logo" loading="lazy">
+
+        <h1>THE TOOLBUS IS COMING</h1>
+
+        <p class="tagline">
+            Industrial tools, equipment, surplus, and liquidation for Arizona field crews.
+        </p>
+
+        <div class="hero-copy">
+            iBuyToolsAZ is building a local industrial tool operation serving technicians,
+            mechanics, HVAC crews, fabricators, maintenance departments, fleet shops,
+            and field service pros across the East Valley.
+        </div>
+
+        <div class="toolbus-panel">
+            <h2>MOBILE TOOL SUPPLY, BUILT FOR THE JOB</h2>
+
+            <p>
+                The planned <strong>iBuyToolsAZ ToolBus</strong> is a mobile industrial supply route designed
+                to bring tools, consumables, specialty gear, and select used equipment directly to the people
+                turning wrenches, fixing machines, servicing fleets, and keeping shops alive.
+            </p>
+
+            <p class="route-line">
+                Planned beta route: Chandler → Mesa → Gilbert industrial corridors.
+            </p>
+
+            <p>
+                Want a future stop near your shop, facility, or industrial park? Get on the route list.
+            </p>
+
+            <div class="cta-row">
+                <a class="button-link" href="mailto:hello@ibuytoolsaz.com?subject=Tool%20Liquidation%20Inquiry">
+                    I Have Tools To Liquidate
+                </a>
+
+                <a class="button-link" href="#route-alerts">
+                    I Need Tools / Route Updates
+                </a>
+            </div>
+        </div>
+
+        <div class="route-signup" id="route-alerts">
+            <h2>TOOLBUS ROUTE ALERTS</h2>
+
+            <p>
+                Get notified when ToolBus route planning opens for Chandler, Mesa, Gilbert,
+                Tempe, Queen Creek, and nearby industrial corridors.
+            </p>
 
             <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
                 <input type="email" name="email" placeholder="Your email address" required>
@@ -84,3 +461,4 @@
 
 </body>
 </html>
+```
